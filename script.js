@@ -10,8 +10,19 @@ document.addEventListener("DOMContentLoaded",() => {
     });
 
     document.addEventListener("keydown", (event) => {
-        if(event.key === "d") {
-            document.body.classList.toggle("dark");
+        switch (event.key) {
+            case "d":
+                document.body.classList.toggle("dark");
+                break;
+            case "f":
+                if (title.style.color === "blue") {
+                    title.style.color = "";
+                    title.style.fontSize = "";
+                } else {
+                    title.style.color = "blue";
+                    title.style.fontSize = "28px";
+                }
+                break;
         }
     });
 
@@ -30,8 +41,8 @@ document.addEventListener("DOMContentLoaded",() => {
     });
 
     let lastScrollTop = 0;
-    document.addEventListener("scroll", () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
         if (Math.abs(scrollTop - lastScrollTop) >= 200) {
             document.body.style.backgroundColor = 
             document.body.style.backgroundColor === "rgb(9, 206, 255)" ? "#ffcccc" : "rgb(9, 206, 255)";
@@ -39,3 +50,4 @@ document.addEventListener("DOMContentLoaded",() => {
         }
     });
 });
+
