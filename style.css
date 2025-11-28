@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: rgb(9, 206, 255);
+    padding: 10px;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+header{
+    padding: 20px;
+    background-color: #f0f0f0;
+    transition: 0.3s ease;
+}
+
+.header:hover{   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+h1,h2, h3 {
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p{
+    margin-bottom: 1em;
+    color: #555;
+    font-size: 1em;
+}
+
+article{
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    flex: 2;
+}
+
+aside{
+    flex: 1;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container .item {
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background-color: #f0f0f0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .grid-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    main{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    body{
+       font-size: 16px;
+    }
+}
+
+@media (Min-width: 768PX){
+    main{
+        max-width: 1024px;
+        margin: auto;
+    }
+    body{
+        font-size: 18px;
+    }
+    .grid-container{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+nav {
+    transition: 0.3 ease;
+}
+
+nav.show-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark {
+    background-color: #222;
+    color: #eee;
+}
+
+body.dark nav a {
+    color: #fff;
+}
+
+.item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-15px) scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+}
